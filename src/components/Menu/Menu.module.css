@@ -1,0 +1,41 @@
+.menu{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.756);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    border-right: 2px solid rgba(199, 199, 199, 0.382);
+    box-sizing: border-box;
+
+  }
+
+  .open {
+    width: 700px;
+    min-width: 70px;
+    resize: 'horizontal';
+    resize: horizontal;
+  }
+
+  .close {
+    width: 70px;
+  }
+
+  @media (max-width: 768px){
+    .menu{
+        width: 0;
+        transition: none;
+        z-index: 10;
+    }
+
+    .open{
+        width: 100vw;
+    }
+
+    .close{
+        width: 0;
+    }
+  }

@@ -1,0 +1,40 @@
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-decoration: none !important;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 2px solid rgba(197, 197, 197, 0.766);
+
+}
+
+.item:hover{
+    background-color: rgba(197, 197, 197, 0.453);
+    transition: background-color 200ms ease-in-out;
+}
+
+.item:active{
+    background-color: transparent;
+    transition: background-color 50ms ease-in-out;
+}
+
+.isActive{
+    background-color: rgba(197, 197, 197, 0.453);
+}
+
+@media (max-width: 768px){
+    .item{
+        display: flex;
+        width: 200px;
+        aspect-ratio: unset;
+        padding-inline: 10px;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: rgba(197, 197, 197, 0.453);
+    }
+    
+}

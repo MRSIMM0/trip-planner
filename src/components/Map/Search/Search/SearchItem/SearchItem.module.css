@@ -1,0 +1,14 @@
+.item_button{
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.item_button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item_button:active{
+    background-color: rgba(0, 0, 0, 0.15);
+}

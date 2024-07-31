@@ -1,0 +1,39 @@
+import React from "react";
+
+import styles from "./ContextMenu.module.css";
+import useContextMenuStore from "@/store/contextMenuStore";
+import ContextMenuButton from "./ContextMenuButton/ContextMenuButton";
+import useMarkerStore from "@/store/markerStore";
+import { v4 as uuidv4 } from 'uuid';
+
+
+export default function ContextMenu() {
+  const { close, position, coordinates, isMarker } = useContextMenuStore();
+
+  const { addMarker, removeMarker } = useMarkerStore();
+ 
+  const addMapMarker = () => {
+    addMarker({id: `${coordinates.lat}${coordinates.lng}`, coordinates})
+    close();
+  };
+
+  const removeMapMarker = () => {
+    removeMarker({id: `${coordinates.lat}${coordinates.lng}`, coordinates})
+    close();
+    console.log(`${coordinates.lat}${coordinates.lng}`)
+  };
+
+
+  return (
+    <section
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+      style={{ left: position.x, top: position.y }}
+      className={styles.pop_up}
+    >
+      {!isMarker &&<ContextMenuButton onClick={() => addMapMarker()} text="Add Marker" />}
+      {isMarker && <ContextMenuButton onClick={() => removeMapMarker()} text="Remove Marker" />}
+    </section>
+  );
+}

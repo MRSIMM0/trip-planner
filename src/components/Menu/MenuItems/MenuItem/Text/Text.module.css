@@ -1,0 +1,11 @@
+.text{
+    color: black;
+    display: none;
+}
+
+@media (max-width: 768px){
+    .text{
+        display: block;
+    }
+    
+}

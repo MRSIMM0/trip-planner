@@ -1,0 +1,13 @@
+.day{
+    display: flex;
+    align-items: center;
+
+    height: 40px;
+    border: 2px solid rgba(201, 201, 201, 0.832);
+    background-color: rgba(197, 197, 197, 0.283);
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px;
+
+    justify-content: space-between;
+}

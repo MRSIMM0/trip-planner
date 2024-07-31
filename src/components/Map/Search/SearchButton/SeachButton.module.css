@@ -1,0 +1,27 @@
+.seach_button{
+    position: absolute;
+    z-index: 2;
+    width: 50px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 100%;
+    border: none;
+    -webkit-box-shadow: 0px 20px 21px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 20px 21px -12px rgba(66, 68, 90, 1);
+    box-shadow: 0px 20px 21px -12px rgba(66, 68, 90, 1);
+    background-color: rgba(255, 255, 255, 0.798);
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seach_button:hover{
+    background-color: rgba(255, 255, 255, 0.968);
+}
+
+.seach_button:active{
+    background-color: rgba(255, 255, 255, 0.861);
+}
