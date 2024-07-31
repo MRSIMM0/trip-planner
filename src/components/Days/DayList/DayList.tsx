@@ -8,6 +8,8 @@ export default function DayList() {
 
   return (
     <section className={styles.list}>
+      <button className={styles.add}>Add Day</button>
+
       {days.map(day => (
         <Day key={day.id} />
       ))}

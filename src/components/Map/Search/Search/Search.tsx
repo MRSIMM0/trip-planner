@@ -6,28 +6,20 @@ import { useQuery } from "@tanstack/react-query";
 import SearchItem from "./SearchItem/SearchItem";
 import { ThreeDots } from "react-loader-spinner";
 import useContextMenuStore from "@/store/contextMenuStore";
+import { useDebouncedSearch } from "@/hooks/useDebounceInput";
+
+
 
 export default function Search() {
   const { close } = useSearchBarStore();
   const {close : closeContextMenu} = useContextMenuStore();
-  const [inputValue, setInputValue] = useState("Colosseo, Rome");
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(inputValue);
 
 
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedSearchTerm(inputValue);
-    }, 500);
-    
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [inputValue]);
+  const [debouncedSearchTerm, setInputValue, value] = useDebouncedSearch("Colosseo, Rome", 500);
 
   useEffect(() => {
     closeContextMenu();
-  }, [])
+  }, []);
 
   const { isPending, error, data } = useQuery({
     queryKey: ["locations", debouncedSearchTerm],
@@ -54,7 +46,7 @@ export default function Search() {
         <input
           autoFocus
           placeholder="Search..."
-          value={inputValue}
+          value={value}
           onChange={(e) => setInputValue(e.target.value)}
           className={styles.search_bar}
         />
@@ -62,7 +54,7 @@ export default function Search() {
           <Image src="/search_icon.svg" alt="" fill />
         </button> */}
       </section>
-      {inputValue && (
+      {value && (
         <section
           onClick={(e) => {
             e.stopPropagation();

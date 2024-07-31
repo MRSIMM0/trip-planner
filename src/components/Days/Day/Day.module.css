@@ -1,13 +1,88 @@
 .day{
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-    height: 40px;
+    height: fit-content;
+
     border: 2px solid rgba(201, 201, 201, 0.832);
     background-color: rgba(197, 197, 197, 0.283);
     box-sizing: border-box;
     border-radius: 5px;
-    padding: 5px;
 
+    padding: 5px;
+}
+
+.day_name{
+    background-color: transparent;
+    height: 100%;
+    border: 1px solid rgba(201, 201, 201, 0.619);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 1.2rem;
+    color: rgb(122, 122, 122);
+}
+
+.day_header{
+    display: flex;
     justify-content: space-between;
+    height: 40px;
+    align-items: center;
+    border-color: rgba(201, 201, 201, 0.832);
+    transition: border 0.4s ease-in-out;
+    padding-block: 5px;
+}
+
+.day_header_open {
+    border-bottom: 1px solid;
+    border-color: rgba(201, 201, 201, 0.832);
+}
+
+.day_header_close {
+    border-bottom: none;
+    border-color: rgba(201, 201, 201, 0.832);
+}
+
+.content_close{
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+
+}
+
+.content_open{
+    height: 200px;
+    overflow: auto;
+    transition: all 0.4s ease-in-out;
+
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.button:hover{
+    background-color: rgba(221, 221, 221, 0.832);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.button:active{
+    background-color: rgba(206, 206, 206, 0.832);
+    transition: background-color 0.1s ease-in-out;
+
+}
+
+.expand {
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.close{
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: all 0.4s ease-in-out;
 }
