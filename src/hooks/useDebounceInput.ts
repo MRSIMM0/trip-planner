@@ -1,7 +1,7 @@
 // useDebouncedSearch.ts
 import { useState, useEffect } from 'react';
 
-export function useDebouncedSearch(initialValue: string, delay: number) {
+export function useDebouncedInput(initialValue: string, delay: number) {
   const [value, setValue] = useState(initialValue);
   const [debouncedValue, setDebouncedValue] = useState(value);
 

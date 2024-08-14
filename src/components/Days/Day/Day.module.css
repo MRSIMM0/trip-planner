@@ -13,13 +13,18 @@
     padding: 5px;
 }
 
+.active {
+    border-color: rgb(131, 174, 174);
+}
+
 .day_name{
     background-color: transparent;
     height: 100%;
-    border: 1px solid rgba(201, 201, 201, 0.619);
+    border: none;
+    border-bottom: 2px solid rgba(201, 201, 201, 0.619);
     border-radius: 5px;
     box-sizing: border-box;
-    padding: 5px;
+    padding: 7px;
     font-size: 1.2rem;
     color: rgb(122, 122, 122);
 }
@@ -35,12 +40,10 @@
 }
 
 .day_header_open {
-    border-bottom: 1px solid;
     border-color: rgba(201, 201, 201, 0.832);
 }
 
 .day_header_close {
-    border-bottom: none;
     border-color: rgba(201, 201, 201, 0.832);
 }
 
@@ -85,4 +88,19 @@
     cursor: pointer;
     transform: rotate(180deg);
     transition: all 0.4s ease-in-out;
+}
+
+.marker_input{
+    height: 140%;
+
+}
+
+.marker{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom: 1px solid rgba(201, 201, 201, 0.832);
 }

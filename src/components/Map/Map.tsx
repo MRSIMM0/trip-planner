@@ -15,6 +15,8 @@ import useSearchBarStore from "@/store/searchBarStore";
 import useMapStore from "@/store/mapStore";
 import { use, useEffect, useRef } from "react";
 import ChangeView from "./MapUtils/ChangeView";
+import useDayStore from "@/store/dayStore";
+import { useQuerryFeatures } from "./Features/useFeatures";
 
 const ICON = icon({
   iconUrl: "/marker.png",
@@ -25,7 +27,7 @@ export const Map = () => {
   const { isOpen: isMarkerOpen } = useContextMenuStore();
   const { isOpen: isSearchOpen, open, close } = useSearchBarStore();
   const { open: openContextMenu } = useContextMenuStore();
-  const { markers } = useMarkerStore();
+  const { getVisibleMarkers } = useDayStore();
 
   const mapRef = useRef(null);
 
@@ -67,8 +69,11 @@ export const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {markers.map((marker, i) => (
-          <Marker eventHandlers={{
+        {getVisibleMarkers().map((marker, i) => (
+          <Marker
+          eventHandlers={{
+            click: (e) => {
+            },
             contextmenu: (e) => {
               openContextMenu({x: e.containerPoint.x, y: e.containerPoint.y}, marker.coordinates, true);
             }
@@ -80,3 +85,4 @@ export const Map = () => {
     </main>
   );
 };
+

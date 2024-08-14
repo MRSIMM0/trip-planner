@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import SearchItem from "./SearchItem/SearchItem";
 import { ThreeDots } from "react-loader-spinner";
 import useContextMenuStore from "@/store/contextMenuStore";
-import { useDebouncedSearch } from "@/hooks/useDebounceInput";
+import { useDebouncedInput } from "@/hooks/useDebounceInput";
 
 
 
@@ -15,7 +15,7 @@ export default function Search() {
   const {close : closeContextMenu} = useContextMenuStore();
 
 
-  const [debouncedSearchTerm, setInputValue, value] = useDebouncedSearch("Colosseo, Rome", 500);
+  const [debouncedSearchTerm, setInputValue, value] = useDebouncedInput("Colosseo, Rome", 500);
 
   useEffect(() => {
     closeContextMenu();

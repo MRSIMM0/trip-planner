@@ -6,6 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 export interface Marker {
     id: string,
     coordinates: {lat: number, lng: number};
+    name?: string;
+    dayId?: string;
 }
 
 interface MarkerStore {
