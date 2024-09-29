@@ -1,6 +1,5 @@
 import {create} from 'zustand';
 import { Marker } from './markerStore';
-import { marker } from 'leaflet';
 
 export interface Day {
     id: string;
